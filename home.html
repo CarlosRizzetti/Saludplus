@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SaludPlus — Inicio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="design-system.css">
+<style>
+  /* Estilos específicos de Home */
+  .hero {
+    background: linear-gradient(160deg, var(--color-support) 0%, #ffffff 70%);
+    padding: var(--sp-6) 0 var(--sp-7);
+  }
+  .hero-greeting {
+    font-size: var(--fs-small);
+    color: var(--color-text-muted);
+    margin-bottom: 2px;
+  }
+  .hero h1 { margin-bottom: var(--sp-5); }
+  .hero-cta-banner {
+    background: var(--color-primary);
+    border-radius: var(--radius-lg);
+    padding: var(--sp-6);
+    color: #fff;
+    margin-top: var(--sp-6);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-cta-banner::after {
+    content: '';
+    position: absolute;
+    right: -30px; top: -30px;
+    width: 140px; height: 140px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.08);
+  }
+  .hero-cta-banner h2 { color: #fff; margin-bottom: var(--sp-2); font-size: var(--fs-h3); }
+  .hero-cta-banner p { color: rgba(255,255,255,0.85); margin-bottom: var(--sp-5); font-size: var(--fs-small); }
+  .hero-cta-banner .btn-secondary-on-primary {
+    background: #fff;
+    color: var(--color-primary-dark);
+  }
+
+  .specialty-scroll {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-3);
+  }
+  @media (min-width: 600px) {
+    .specialty-scroll { grid-template-columns: repeat(4, 1fr); }
+  }
+
+  .tip-card {
+    display: flex;
+    gap: var(--sp-4);
+    padding: var(--sp-4);
+  }
+  .tip-card .tip-icon {
+    width: 44px; height: 44px;
+    border-radius: var(--radius-sm);
+    background: var(--color-success-bg);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+  }
+  .tip-card h3 { font-size: var(--fs-small); margin-bottom: var(--sp-1); }
+  .tip-card p { font-size: var(--fs-tiny); color: var(--color-text-muted); }
+
+  .news-card {
+    overflow: hidden;
+    padding: 0;
+  }
+  .news-card .news-img {
+    height: 120px;
+    background: linear-gradient(135deg, var(--color-support-strong), var(--color-support));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2rem;
+  }
+  .news-card .news-body { padding: var(--sp-4); }
+  .news-card h3 { font-size: var(--fs-small); margin-bottom: var(--sp-2); }
+  .news-card .news-date { font-size: var(--fs-tiny); color: var(--color-text-muted); }
+
+  .news-grid {
+    display: grid;
+    gap: var(--sp-4);
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 700px) {
+    .news-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="header">
+  <div class="container header-inner">
+    <a href="home.html" class="logo">
+      <span class="logo-mark" aria-hidden="true">+</span>
+      SaludPlus
+    </a>
+
+    <nav class="navbar-desktop" aria-label="Navegación principal">
+      <a href="home.html" class="active">Inicio</a>
+      <a href="detalle-especialidad.html">Especialidades</a>
+      <a href="profesionales.html">Profesionales</a>
+      <a href="estudios.html">Estudios</a>
+      <a href="mis-turnos.html">Mis Turnos</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="icon-btn" aria-label="Buscar">🔍</button>
+      <button class="icon-btn" aria-label="Notificaciones, 2 nuevas">
+        🔔<span class="badge-dot"></span>
+      </button>
+      <a href="detalle-especialidad.html" class="btn btn-primary btn-sm cta-header">Solicitar Turno</a>
+      <button class="avatar-btn" aria-label="Mi perfil">
+        <span class="avatar-fallback">MJ</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main class="page-content">
+
+  <!-- ============ HERO / BANNER PRINCIPAL ============ -->
+  <section class="hero">
+    <div class="container">
+      <p class="hero-greeting">Hola, María José 👋</p>
+      <h1>¿Qué turno necesitás hoy?</h1>
+
+      <label for="search-home" class="visually-hidden">Buscar especialidad, médico o estudio</label>
+      <div class="search-bar">
+        <span aria-hidden="true">🔍</span>
+        <input id="search-home" type="text" placeholder="Buscar especialidad, médico o estudio…">
+      </div>
+
+      <div class="hero-cta-banner">
+        <h2>Reservá tu turno en menos de 1 minuto</h2>
+        <p>Sin llamadas ni esperas. Elegí especialidad, médico, día y hora — listo.</p>
+        <a href="detalle-especialidad.html" class="btn btn-secondary-on-primary">Solicitar Turno →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ESPECIALIDADES DESTACADAS ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-title-row">
+        <h2>Especialidades destacadas</h2>
+        <a href="#">Ver todas</a>
+      </div>
+
+      <div class="specialty-scroll">
+        <a href="detalle-especialidad.html" class="card card-interactive card-specialty">
+          <span class="icon-circle" aria-hidden="true">🩺</span>
+          <h3>Clínica Médica</h3>
+          <span class="count">18 profesionales</span>
+        </a>
+        <a href="detalle-especialidad.html" class="card card-interactive card-specialty">
+          <span class="icon-circle" aria-hidden="true">❤️</span>
+          <h3>Cardiología</h3>
+          <span class="count">9 profesionales</span>
+        </a>
+        <a href="detalle-especialidad.html" class="card card-interactive card-specialty">
+          <span class="icon-circle" aria-hidden="true">🦴</span>
+          <h3>Traumatología</h3>
+          <span class="count">7 profesionales</span>
+        </a>
+        <a href="detalle-especialidad.html" class="card card-interactive card-specialty">
+          <span class="icon-circle" aria-hidden="true">👶</span>
+          <h3>Pediatría</h3>
+          <span class="count">12 profesionales</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONSEJOS DE SALUD ============ -->
+  <section class="section" style="background: var(--color-support); border-radius: var(--radius-lg);">
+    <div class="container">
+      <div class="section-title-row">
+        <h2>Consejos de salud</h2>
+      </div>
+      <div class="stack">
+        <div class="card tip-card">
+          <span class="tip-icon" aria-hidden="true">💧</span>
+          <div>
+            <h3>Hidratate durante el invierno</h3>
+            <p>Tomar agua también es clave en los meses fríos para tu sistema inmune.</p>
+          </div>
+        </div>
+        <div class="card tip-card">
+          <span class="tip-icon" aria-hidden="true">🩻</span>
+          <div>
+            <h3>Controles anuales</h3>
+            <p>Un chequeo general por año te ayuda a detectar a tiempo.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ NOTICIAS ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-title-row">
+        <h2>Noticias del centro</h2>
+        <a href="#">Ver todas</a>
+      </div>
+      <div class="news-grid">
+        <article class="card news-card card-interactive">
+          <div class="news-img" aria-hidden="true">🏥</div>
+          <div class="news-body">
+            <h3>Nueva sede de Diagnóstico por Imágenes</h3>
+            <p class="news-date">18 de junio, 2026</p>
+          </div>
+        </article>
+        <article class="card news-card card-interactive">
+          <div class="news-img" aria-hidden="true">💉</div>
+          <div class="news-body">
+            <h3>Campaña de vacunación antigripal</h3>
+            <p class="news-date">10 de junio, 2026</p>
+          </div>
+        </article>
+        <article class="card news-card card-interactive">
+          <div class="news-img" aria-hidden="true">👨‍⚕️</div>
+          <div class="news-body">
+            <h3>Se incorpora nuevo equipo de Cardiología</h3>
+            <p class="news-date">2 de junio, 2026</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ CTA FLOTANTE (mobile) ============ -->
+<a href="detalle-especialidad.html" class="btn btn-primary fab-cta" aria-label="Solicitar Turno">
+  📅 Solicitar Turno
+</a>
+
+<!-- ============ BOTTOM NAV (mobile) ============ -->
+<nav class="bottom-nav" aria-label="Navegación inferior">
+  <a href="home.html" class="active"><span class="nav-icon" aria-hidden="true">🏠</span>Inicio</a>
+  <a href="detalle-especialidad.html"><span class="nav-icon" aria-hidden="true">🩺</span>Especialidades</a>
+  <a href="mis-turnos.html"><span class="nav-icon" aria-hidden="true">📅</span>Mis Turnos</a>
+  <a href="perfil-paciente.html"><span class="nav-icon" aria-hidden="true">👤</span>Perfil</a>
+</nav>
+
+<!-- ============ FOOTER (oculto detrás de bottom-nav en mobile real, visible en desktop / scroll) ============ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="home.html" class="logo" style="margin-bottom: var(--sp-3); display:inline-flex;">
+          <span class="logo-mark" aria-hidden="true">+</span> SaludPlus
+        </a>
+        <p class="text-small text-muted">Av. Libertador 4250, Buenos Aires<br>Lun a Vie de 8 a 20 hs · Sáb de 9 a 13 hs</p>
+        <div class="footer-social" style="margin-top: var(--sp-4);">
+          <a href="#" aria-label="WhatsApp">💬</a>
+          <a href="#" aria-label="Instagram">📷</a>
+          <a href="#" aria-label="Facebook">📘</a>
+        </div>
+      </div>
+      <div>
+        <h4>Centro</h4>
+        <div class="footer-links">
+          <a href="contacto.html">Preguntas frecuentes</a>
+          <a href="contacto.html">Contacto</a>
+          <a href="contacto.html">Mapa y cómo llegar</a>
+        </div>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <div class="footer-links">
+          <a href="#">📞 (011) 4555-0199</a>
+          <a href="#">✉️ turnos@saludplus.com.ar</a>
+        </div>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <div class="footer-links">
+          <a href="#">Términos y condiciones</a>
+          <a href="#">Política de privacidad</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 SaludPlus. Todos los derechos reservados.</span>
+      <span>Centro de Salud Multiespecialidad</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

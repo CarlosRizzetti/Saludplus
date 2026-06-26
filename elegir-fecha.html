@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SaludPlus — Elegir Fecha</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="design-system.css">
+<style>
+  .flow-header { padding: var(--sp-5) 0 0; }
+  .selected-summary {
+    display: flex; align-items: center; gap: var(--sp-3);
+    background: var(--color-support); border-radius: var(--radius-md);
+    padding: var(--sp-3) var(--sp-4); margin-bottom: var(--sp-5);
+  }
+  .selected-summary .avatar-sm {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: var(--color-support-strong);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem; flex-shrink: 0;
+  }
+  .selected-summary .text { font-size: var(--fs-small); }
+  .selected-summary .text strong { display: block; font-size: var(--fs-body); }
+  .calendar-nav-btn {
+    width: 36px; height: 36px; border-radius: 50%;
+    border: 1.5px solid var(--color-border); background: #fff;
+    cursor: pointer; font-size: 0.9rem;
+  }
+  .calendar-nav-btn:hover { background: var(--color-support); }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="container header-inner">
+    <a href="home.html" class="logo"><span class="logo-mark" aria-hidden="true">+</span>SaludPlus</a>
+    <nav class="navbar-desktop" aria-label="Navegación principal">
+      <a href="home.html">Inicio</a>
+      <a href="detalle-especialidad.html">Especialidades</a>
+      <a href="profesionales.html">Profesionales</a>
+      <a href="estudios.html">Estudios</a>
+      <a href="mis-turnos.html">Mis Turnos</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" aria-label="Notificaciones, 2 nuevas">🔔<span class="badge-dot"></span></button>
+      <a href="perfil-paciente.html" class="avatar-btn" aria-label="Mi perfil"><span class="avatar-fallback">MJ</span></a>
+    </div>
+  </div>
+</header>
+
+<main class="page-content" style="padding-bottom: 140px;">
+  <div class="container flow-header">
+
+    <a href="perfil-profesional.html" class="back-btn" style="margin-bottom: var(--sp-4); display:inline-flex;">← Volver al perfil</a>
+
+    <!-- STEPPER -->
+    <div class="stepper" aria-label="Progreso de la reserva">
+      <div class="stepper-step is-done"><span class="dot">✓</span><span class="label">Médico</span></div>
+      <div class="stepper-step is-current"><span class="dot">2</span><span class="label">Fecha</span></div>
+      <div class="stepper-step"><span class="dot">3</span><span class="label">Horario</span></div>
+      <div class="stepper-step"><span class="dot">4</span><span class="label">Confirmar</span></div>
+    </div>
+
+    <div class="selected-summary">
+      <span class="avatar-sm" aria-hidden="true">👨‍⚕️</span>
+      <div class="text"><span>Cardiología</span><strong>Dr. Eduardo Fernández</strong></div>
+    </div>
+
+    <h2 style="margin-bottom: var(--sp-4);">Elegí el día de tu turno</h2>
+
+    <div class="calendar">
+      <div class="calendar-header">
+        <button class="calendar-nav-btn" aria-label="Mes anterior">←</button>
+        <h3>Junio 2026</h3>
+        <button class="calendar-nav-btn" aria-label="Mes siguiente">→</button>
+      </div>
+      <div class="calendar-grid">
+        <span class="weekday">D</span><span class="weekday">L</span><span class="weekday">M</span><span class="weekday">M</span><span class="weekday">J</span><span class="weekday">V</span><span class="weekday">S</span>
+
+        <span></span><span></span>
+        <button class="calendar-day disabled" disabled>1</button>
+        <button class="calendar-day disabled" disabled>2</button>
+        <button class="calendar-day disabled" disabled>3</button>
+        <button class="calendar-day disabled" disabled>4</button>
+        <button class="calendar-day disabled" disabled>5</button>
+
+        <button class="calendar-day disabled" disabled>6</button>
+        <button class="calendar-day has-availability">8</button>
+        <button class="calendar-day has-availability">9</button>
+        <button class="calendar-day has-availability">10</button>
+        <button class="calendar-day has-availability">11</button>
+        <button class="calendar-day has-availability">12</button>
+        <button class="calendar-day disabled" disabled>13</button>
+
+        <button class="calendar-day disabled" disabled>14</button>
+        <button class="calendar-day has-availability">15</button>
+        <button class="calendar-day has-availability">16</button>
+        <button class="calendar-day has-availability">17</button>
+        <button class="calendar-day has-availability">18</button>
+        <button class="calendar-day has-availability">19</button>
+        <button class="calendar-day disabled" disabled>20</button>
+
+        <button class="calendar-day disabled" disabled>21</button>
+        <button class="calendar-day has-availability">22</button>
+        <button class="calendar-day has-availability">23</button>
+        <button class="calendar-day has-availability">24</button>
+        <button class="calendar-day has-availability today selected">25</button>
+        <button class="calendar-day has-availability">26</button>
+        <button class="calendar-day disabled" disabled>27</button>
+
+        <button class="calendar-day disabled" disabled>28</button>
+        <button class="calendar-day has-availability">29</button>
+        <button class="calendar-day has-availability">30</button>
+      </div>
+    </div>
+
+    <div class="legend">
+      <span class="legend-item"><span class="legend-swatch" style="background: var(--color-primary);"></span>Seleccionado</span>
+      <span class="legend-item"><span class="legend-swatch" style="background:#fff; border:1.5px solid var(--color-secondary);"></span>Con disponibilidad</span>
+      <span class="legend-item"><span class="legend-swatch" style="background: var(--color-disabled-bg);"></span>Sin turnos</span>
+    </div>
+
+  </div>
+</main>
+
+<div class="sticky-footer-bar">
+  <div class="row">
+    <div class="info">Fecha elegida<strong>Jueves 25 de junio</strong></div>
+    <a href="elegir-horario.html" class="btn btn-primary">Continuar →</a>
+  </div>
+</div>
+
+</body>
+</html>

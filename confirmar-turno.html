@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SaludPlus — Confirmar Turno</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="design-system.css">
+<style>
+  .flow-header { padding: var(--sp-5) 0 0; }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="container header-inner">
+    <a href="home.html" class="logo"><span class="logo-mark" aria-hidden="true">+</span>SaludPlus</a>
+    <nav class="navbar-desktop" aria-label="Navegación principal">
+      <a href="home.html">Inicio</a>
+      <a href="detalle-especialidad.html">Especialidades</a>
+      <a href="profesionales.html">Profesionales</a>
+      <a href="estudios.html">Estudios</a>
+      <a href="mis-turnos.html">Mis Turnos</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" aria-label="Notificaciones, 2 nuevas">🔔<span class="badge-dot"></span></button>
+      <a href="perfil-paciente.html" class="avatar-btn" aria-label="Mi perfil"><span class="avatar-fallback">MJ</span></a>
+    </div>
+  </div>
+</header>
+
+<main class="page-content" style="padding-bottom: 140px;">
+  <div class="container flow-header" style="max-width: 560px;">
+
+    <a href="elegir-horario.html" class="back-btn" style="margin-bottom: var(--sp-4); display:inline-flex;">← Volver al horario</a>
+
+    <!-- STEPPER -->
+    <div class="stepper" aria-label="Progreso de la reserva">
+      <div class="stepper-step is-done"><span class="dot">✓</span><span class="label">Médico</span></div>
+      <div class="stepper-step is-done"><span class="dot">✓</span><span class="label">Fecha</span></div>
+      <div class="stepper-step is-done"><span class="dot">✓</span><span class="label">Horario</span></div>
+      <div class="stepper-step is-current"><span class="dot">4</span><span class="label">Confirmar</span></div>
+    </div>
+
+    <h2 style="margin-bottom: var(--sp-1);">Revisá los datos de tu turno</h2>
+    <p class="text-muted text-small" style="margin-bottom: var(--sp-5);">Antes de confirmar, asegurate de que todo esté correcto.</p>
+
+    <div class="card">
+      <div class="summary-row">
+        <span class="label">👤 Paciente</span>
+        <span class="value">María José Pérez</span>
+      </div>
+      <div class="summary-row">
+        <span class="label">🩺 Especialidad</span>
+        <span class="value">Cardiología</span>
+      </div>
+      <div class="summary-row">
+        <span class="label">👨‍⚕️ Profesional</span>
+        <span class="value">Dr. Eduardo Fernández</span>
+      </div>
+      <div class="summary-row">
+        <span class="label">📅 Fecha</span>
+        <span class="value">Jueves 25 de junio, 2026</span>
+      </div>
+      <div class="summary-row">
+        <span class="label">🕒 Horario</span>
+        <span class="value">10:00 hs</span>
+      </div>
+      <div class="summary-row">
+        <span class="label">📍 Sede</span>
+        <span class="value">Av. Libertador 4250, CABA</span>
+      </div>
+      <div class="summary-row">
+        <span class="label">💳 Cobertura</span>
+        <span class="value">OSDE 310</span>
+      </div>
+    </div>
+
+    <div class="alert alert-info" style="margin-top: var(--sp-5);">
+      <span class="alert-icon" aria-hidden="true">ℹ️</span>
+      <span>Llegá 10 minutos antes con tu DNI y carnet de tu obra social. Podés cancelar o reprogramar sin costo hasta 24 hs antes.</span>
+    </div>
+
+  </div>
+</main>
+
+<div class="sticky-footer-bar">
+  <div class="row">
+    <div class="info">Tu turno<strong>Jue 25/06 · 10:00 hs</strong></div>
+    <a href="turno-confirmado.html" class="btn btn-primary">Confirmar Turno ✓</a>
+  </div>
+</div>
+
+</body>
+</html>

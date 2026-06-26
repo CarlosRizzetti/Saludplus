@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SaludPlus — Página no encontrada</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="design-system.css">
+<style>
+  .error-wrap {
+    min-height: calc(100vh - var(--header-height));
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; padding: var(--sp-7) var(--sp-5);
+  }
+  .error-illustration {
+    width: 140px; height: 140px; border-radius: 50%;
+    background: var(--color-support);
+    display:flex; align-items:center; justify-content:center;
+    font-size: 4rem; margin-bottom: var(--sp-6);
+  }
+  .error-code { font-family: var(--font-display); font-size: 3.5rem; font-weight: 700; color: var(--color-primary); margin-bottom: var(--sp-2); }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="container header-inner">
+    <a href="home.html" class="logo"><span class="logo-mark" aria-hidden="true">+</span>SaludPlus</a>
+  </div>
+</header>
+
+<div class="error-wrap">
+  <span class="error-illustration" aria-hidden="true">🧭</span>
+  <div class="error-code">404</div>
+  <h1 style="margin-bottom: var(--sp-2);">No encontramos esta página</h1>
+  <p class="text-muted" style="margin-bottom: var(--sp-6); max-width: 360px;">Puede que el enlace esté roto o que la página se haya movido. Volvamos a un lugar conocido.</p>
+  <a href="home.html" class="btn btn-primary">Volver al inicio</a>
+</div>
+
+</body>
+</html>

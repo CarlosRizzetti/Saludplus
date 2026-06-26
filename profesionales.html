@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SaludPlus — Profesionales</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="design-system.css">
+<style>
+  .page-banner { padding: var(--sp-6) 0 var(--sp-5); }
+  .filter-row { display:flex; gap: var(--sp-2); overflow-x:auto; padding: var(--sp-3) 0 var(--sp-5); }
+  .filter-row::-webkit-scrollbar{display:none;}
+  .doctor-list { display:flex; flex-direction:column; gap: var(--sp-3); }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="container header-inner">
+    <a href="home.html" class="logo"><span class="logo-mark" aria-hidden="true">+</span>SaludPlus</a>
+    <nav class="navbar-desktop" aria-label="Navegación principal">
+      <a href="home.html">Inicio</a>
+      <a href="detalle-especialidad.html">Especialidades</a>
+      <a href="profesionales.html" class="active">Profesionales</a>
+      <a href="estudios.html">Estudios</a>
+      <a href="mis-turnos.html">Mis Turnos</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" aria-label="Buscar">🔍</button>
+      <button class="icon-btn" aria-label="Notificaciones, 2 nuevas">🔔<span class="badge-dot"></span></button>
+      <a href="detalle-especialidad.html" class="btn btn-primary btn-sm cta-header">Solicitar Turno</a>
+      <a href="perfil-paciente.html" class="avatar-btn" aria-label="Mi perfil"><span class="avatar-fallback">MJ</span></a>
+    </div>
+  </div>
+</header>
+
+<main class="page-content">
+  <div class="container page-banner">
+    <h1 style="margin-bottom: var(--sp-2);">Nuestros profesionales</h1>
+    <p class="text-muted">42 médicos especialistas, organizados para que encuentres el indicado en segundos.</p>
+
+    <label for="search-doc" class="visually-hidden">Buscar profesional</label>
+    <div class="search-bar" style="margin-top: var(--sp-5);">
+      <span aria-hidden="true">🔍</span>
+      <input id="search-doc" type="text" placeholder="Buscar por nombre o especialidad…">
+    </div>
+
+    <div class="filter-row" role="group" aria-label="Filtrar por especialidad">
+      <button class="chip-selectable active">Todas</button>
+      <button class="chip-selectable">Clínica Médica</button>
+      <button class="chip-selectable">Cardiología</button>
+      <button class="chip-selectable">Traumatología</button>
+      <button class="chip-selectable">Pediatría</button>
+      <button class="chip-selectable">Ginecología</button>
+    </div>
+
+    <div class="doctor-list">
+      <a href="perfil-profesional.html" class="card card-interactive card-doctor">
+        <span class="avatar" aria-hidden="true" style="display:flex;align-items:center;justify-content:center;font-size:1.6rem;">👨‍⚕️</span>
+        <div class="info">
+          <h3>Dr. Eduardo Fernández</h3>
+          <span class="specialty-tag">Cardiología clínica</span>
+          <div class="meta"><span class="rating">⭐ 4.9</span><span>· 15 años de experiencia</span></div>
+        </div>
+      </a>
+      <a href="perfil-profesional.html" class="card card-interactive card-doctor">
+        <span class="avatar" aria-hidden="true" style="display:flex;align-items:center;justify-content:center;font-size:1.6rem;">👩‍⚕️</span>
+        <div class="info">
+          <h3>Dra. Valeria Castro</h3>
+          <span class="specialty-tag">Clínica Médica</span>
+          <div class="meta"><span class="rating">⭐ 4.8</span><span>· 9 años de experiencia</span></div>
+        </div>
+      </a>
+      <a href="perfil-profesional.html" class="card card-interactive card-doctor">
+        <span class="avatar" aria-hidden="true" style="display:flex;align-items:center;justify-content:center;font-size:1.6rem;">👨‍⚕️</span>
+        <div class="info">
+          <h3>Dr. Ignacio Pereyra</h3>
+          <span class="specialty-tag">Traumatología</span>
+          <div class="meta"><span class="rating">⭐ 4.7</span><span>· 13 años de experiencia</span></div>
+        </div>
+      </a>
+      <a href="perfil-profesional.html" class="card card-interactive card-doctor">
+        <span class="avatar" aria-hidden="true" style="display:flex;align-items:center;justify-content:center;font-size:1.6rem;">👩‍⚕️</span>
+        <div class="info">
+          <h3>Dra. Laura Giménez</h3>
+          <span class="specialty-tag">Cardiología infantil</span>
+          <div class="meta"><span class="rating">⭐ 4.8</span><span>· 11 años de experiencia</span></div>
+        </div>
+      </a>
+      <a href="perfil-profesional.html" class="card card-interactive card-doctor">
+        <span class="avatar" aria-hidden="true" style="display:flex;align-items:center;justify-content:center;font-size:1.6rem;">👶</span>
+        <div class="info">
+          <h3>Dra. Sofía Ramos</h3>
+          <span class="specialty-tag">Pediatría</span>
+          <div class="meta"><span class="rating">⭐ 5.0</span><span>· 7 años de experiencia</span></div>
+        </div>
+      </a>
+    </div>
+  </div>
+</main>
+
+<a href="detalle-especialidad.html" class="btn btn-primary fab-cta" aria-label="Solicitar Turno">📅 Solicitar Turno</a>
+
+<nav class="bottom-nav" aria-label="Navegación inferior">
+  <a href="home.html"><span class="nav-icon" aria-hidden="true">🏠</span>Inicio</a>
+  <a href="detalle-especialidad.html"><span class="nav-icon" aria-hidden="true">🩺</span>Especialidades</a>
+  <a href="mis-turnos.html"><span class="nav-icon" aria-hidden="true">📅</span>Mis Turnos</a>
+  <a href="perfil-paciente.html"><span class="nav-icon" aria-hidden="true">👤</span>Perfil</a>
+</nav>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="home.html" class="logo" style="margin-bottom: var(--sp-3); display:inline-flex;"><span class="logo-mark" aria-hidden="true">+</span> SaludPlus</a>
+        <p class="text-small text-muted">Av. Libertador 4250, Buenos Aires<br>Lun a Vie de 8 a 20 hs · Sáb de 9 a 13 hs</p>
+        <div class="footer-social" style="margin-top: var(--sp-4);">
+          <a href="#" aria-label="WhatsApp">💬</a><a href="#" aria-label="Instagram">📷</a><a href="#" aria-label="Facebook">📘</a>
+        </div>
+      </div>
+      <div><h4>Centro</h4><div class="footer-links"><a href="contacto.html">Preguntas frecuentes</a><a href="contacto.html">Contacto</a><a href="contacto.html">Mapa y cómo llegar</a></div></div>
+      <div><h4>Contacto</h4><div class="footer-links"><a href="#">📞 (011) 4555-0199</a><a href="#">✉️ turnos@saludplus.com.ar</a></div></div>
+      <div><h4>Legal</h4><div class="footer-links"><a href="#">Términos y condiciones</a><a href="#">Política de privacidad</a></div></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 SaludPlus. Todos los derechos reservados.</span>
+      <span>Centro de Salud Multiespecialidad</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

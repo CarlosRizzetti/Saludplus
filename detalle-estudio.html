@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SaludPlus — Análisis de Sangre Completo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="design-system.css">
+<style>
+  .study-banner { background: var(--color-support); padding: var(--sp-6) 0 var(--sp-7); }
+  .study-banner .icon-circle-lg {
+    width: 64px; height: 64px; border-radius: var(--radius-md);
+    background: #fff; display:flex; align-items:center; justify-content:center;
+    font-size: 2rem; margin-bottom: var(--sp-4); box-shadow: var(--shadow-1);
+  }
+  .meta-pills { display:flex; gap: var(--sp-3); flex-wrap: wrap; margin-top: var(--sp-4); }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="container header-inner">
+    <a href="home.html" class="logo"><span class="logo-mark" aria-hidden="true">+</span>SaludPlus</a>
+    <nav class="navbar-desktop" aria-label="Navegación principal">
+      <a href="home.html">Inicio</a>
+      <a href="detalle-especialidad.html">Especialidades</a>
+      <a href="profesionales.html">Profesionales</a>
+      <a href="estudios.html" class="active">Estudios</a>
+      <a href="mis-turnos.html">Mis Turnos</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" aria-label="Notificaciones, 2 nuevas">🔔<span class="badge-dot"></span></button>
+      <a href="perfil-paciente.html" class="avatar-btn" aria-label="Mi perfil"><span class="avatar-fallback">MJ</span></a>
+    </div>
+  </div>
+</header>
+
+<main class="page-content" style="padding-bottom: 140px;">
+
+  <section class="study-banner">
+    <div class="container" style="max-width: 680px;">
+      <nav class="breadcrumb" style="margin-bottom: var(--sp-4);">
+        <a href="home.html">Inicio</a><span class="sep">/</span>
+        <a href="estudios.html">Estudios</a><span class="sep">/</span>
+        <span class="current">Análisis de sangre</span>
+      </nav>
+      <span class="icon-circle-lg" aria-hidden="true">🩸</span>
+      <h1>Análisis de sangre completo</h1>
+      <div class="meta-pills">
+        <span class="chip">⏱️ 10 minutos</span>
+        <span class="chip badge-warning" style="background: var(--color-warning-bg); color:#92651A;">🍽️ Requiere ayuno de 8 hs</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="container" style="max-width: 680px; padding-top: var(--sp-6);">
+
+    <div class="info-block">
+      <h3>📋 Preparación previa</h3>
+      <ul>
+        <li>Ayuno de 8 horas antes del estudio (se puede tomar agua)</li>
+        <li>No consumir alcohol 24 horas antes</li>
+        <li>Traer orden médica y carnet de la obra social</li>
+        <li>Informar si estás tomando alguna medicación habitual</li>
+      </ul>
+    </div>
+
+    <div class="info-block">
+      <h3>⏱️ Duración y resultados</h3>
+      <ul>
+        <li>El estudio dura aproximadamente 10 minutos</li>
+        <li>Los resultados estarán disponibles en 24 a 48 hs</li>
+        <li>Podés verlos desde "Mis Turnos" una vez listos</li>
+      </ul>
+    </div>
+
+    <div class="info-block" style="margin-bottom: var(--sp-7);">
+      <h3>❓ Preguntas frecuentes</h3>
+      <details class="accordion-item" open>
+        <summary>¿Puedo tomar agua antes del análisis?</summary>
+        <div class="accordion-body">Sí, podés tomar agua durante el ayuno. Lo que debés evitar son alimentos, café, té, mate y alcohol.</div>
+      </details>
+      <details class="accordion-item">
+        <summary>¿Qué pasa si rompo el ayuno por error?</summary>
+        <div class="accordion-body">Te recomendamos reprogramar el turno para otro día, ya que algunos valores pueden alterarse.</div>
+      </details>
+      <details class="accordion-item">
+        <summary>¿Necesito orden médica?</summary>
+        <div class="accordion-body">Sí, es necesario presentar la orden de tu médico al momento del estudio.</div>
+      </details>
+    </div>
+
+  </div>
+</main>
+
+<div class="sticky-footer-bar">
+  <div class="row">
+    <div class="info">¿Listo para reservar?</div>
+    <a href="elegir-fecha.html" class="btn btn-primary">Pedir Turno →</a>
+  </div>
+</div>
+
+</body>
+</html>

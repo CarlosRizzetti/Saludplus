@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SaludPlus — Detalle del Turno</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="design-system.css">
+<style>
+  .map-placeholder {
+    height: 160px;
+    border-radius: var(--radius-md);
+    background: linear-gradient(135deg, var(--color-support-strong), var(--color-support));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2.5rem;
+    margin-bottom: var(--sp-3);
+  }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="container header-inner">
+    <a href="home.html" class="logo"><span class="logo-mark" aria-hidden="true">+</span>SaludPlus</a>
+    <nav class="navbar-desktop" aria-label="Navegación principal">
+      <a href="home.html">Inicio</a>
+      <a href="detalle-especialidad.html">Especialidades</a>
+      <a href="profesionales.html">Profesionales</a>
+      <a href="estudios.html">Estudios</a>
+      <a href="mis-turnos.html" class="active">Mis Turnos</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" aria-label="Notificaciones, 2 nuevas">🔔<span class="badge-dot"></span></button>
+      <a href="perfil-paciente.html" class="avatar-btn" aria-label="Mi perfil"><span class="avatar-fallback">MJ</span></a>
+    </div>
+  </div>
+</header>
+
+<main class="page-content" style="padding-bottom: 140px;">
+  <div class="container" style="padding-top: var(--sp-5); max-width: 560px;">
+
+    <a href="mis-turnos.html" class="back-btn" style="margin-bottom: var(--sp-5); display:inline-flex;">← Volver a Mis Turnos</a>
+
+    <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom: var(--sp-5);">
+      <h1>Tu turno</h1>
+      <span class="badge badge-success">Confirmado</span>
+    </div>
+
+    <div class="card" style="margin-bottom: var(--sp-5);">
+      <div class="summary-row"><span class="label">🩺 Especialidad</span><span class="value">Cardiología</span></div>
+      <div class="summary-row"><span class="label">👨‍⚕️ Profesional</span><span class="value">Dr. Eduardo Fernández</span></div>
+      <div class="summary-row"><span class="label">📅 Fecha</span><span class="value">Jueves 25 de junio, 2026</span></div>
+      <div class="summary-row"><span class="label">🕒 Horario</span><span class="value">10:00 hs</span></div>
+      <div class="summary-row"><span class="label">🔖 N° de turno</span><span class="value">SP-2026-08471</span></div>
+    </div>
+
+    <div class="info-block">
+      <h3>📋 Indicaciones previas</h3>
+      <ul>
+        <li>Llegá 10 minutos antes de tu horario</li>
+        <li>Traé tu DNI y carnet de la obra social</li>
+        <li>Si tomás anticoagulantes, avisá en recepción</li>
+      </ul>
+    </div>
+
+    <div class="info-block">
+      <h3>📍 Ubicación</h3>
+      <div class="map-placeholder" aria-hidden="true">🗺️</div>
+      <p class="text-small text-muted">Av. Libertador 4250, CABA — Piso 3, Consultorio 12</p>
+    </div>
+
+    <div style="display:flex; gap: var(--sp-3); flex-wrap: wrap;">
+      <button class="btn btn-outline" type="button">⬇️ Descargar comprobante</button>
+      <button class="btn btn-outline" type="button">🗓️ Agregar al calendario</button>
+    </div>
+
+  </div>
+</main>
+
+<div class="sticky-footer-bar">
+  <div class="row">
+    <div class="info">¿Necesitás hacer cambios?</div>
+    <div style="display:flex; gap: var(--sp-3);">
+      <button class="btn btn-ghost" type="button">Cancelar</button>
+      <button class="btn btn-primary" type="button">Reprogramar</button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

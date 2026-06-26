@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SaludPlus — Elegir Horario</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="design-system.css">
+<style>
+  .flow-header {
+    padding: var(--sp-5) 0 0;
+  }
+  .selected-summary {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-3);
+    background: var(--color-support);
+    border-radius: var(--radius-md);
+    padding: var(--sp-3) var(--sp-4);
+    margin-bottom: var(--sp-5);
+  }
+  .selected-summary .avatar-sm {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: var(--color-support-strong);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+  .selected-summary .text { font-size: var(--fs-small); }
+  .selected-summary .text strong { display: block; font-size: var(--fs-body); }
+
+  .date-picker-mini {
+    display: flex;
+    gap: var(--sp-2);
+    overflow-x: auto;
+    padding-bottom: var(--sp-5);
+  }
+  .date-picker-mini::-webkit-scrollbar { display: none; }
+  .date-chip {
+    flex-shrink: 0;
+    min-width: 64px;
+    border-radius: var(--radius-md);
+    border: 1.5px solid var(--color-border);
+    background: #fff;
+    padding: var(--sp-3) var(--sp-2);
+    text-align: center;
+    cursor: pointer;
+  }
+  .date-chip .dow { font-size: var(--fs-tiny); color: var(--color-text-muted); display:block; }
+  .date-chip .dom { font-size: var(--fs-h3); font-weight: 700; display:block; margin: 2px 0; }
+  .date-chip .has-slots { font-size: var(--fs-tiny); color: var(--color-secondary-dark); }
+  .date-chip.selected {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+  }
+  .date-chip.selected .dow,
+  .date-chip.selected .dom,
+  .date-chip.selected .has-slots { color: #fff; }
+
+  .legend {
+    display: flex;
+    gap: var(--sp-5);
+    margin-top: var(--sp-6);
+    font-size: var(--fs-tiny);
+    color: var(--color-text-muted);
+    flex-wrap: wrap;
+  }
+  .legend-item { display: flex; align-items: center; gap: var(--sp-2); }
+  .legend-swatch { width: 14px; height: 14px; border-radius: 4px; display:inline-block; }
+
+  .sticky-footer-bar {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: #fff;
+    border-top: 1px solid var(--color-border);
+    padding: var(--sp-4) var(--sp-4) max(var(--sp-4), env(safe-area-inset-bottom));
+    z-index: 60;
+    box-shadow: 0 -4px 20px rgba(25,55,90,0.08);
+  }
+  .sticky-footer-bar .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    gap: var(--sp-4);
+  }
+  .sticky-footer-bar .info { font-size: var(--fs-small); }
+  .sticky-footer-bar .info strong { display:block; font-size: var(--fs-body); color: var(--color-primary); }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="header">
+  <div class="container header-inner">
+    <a href="home.html" class="logo">
+      <span class="logo-mark" aria-hidden="true">+</span>
+      SaludPlus
+    </a>
+    <nav class="navbar-desktop" aria-label="Navegación principal">
+      <a href="home.html">Inicio</a>
+      <a href="detalle-especialidad.html">Especialidades</a>
+      <a href="#">Profesionales</a>
+      <a href="#">Estudios</a>
+      <a href="#">Mis Turnos</a>
+      <a href="#">Contacto</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" aria-label="Buscar">🔍</button>
+      <button class="icon-btn" aria-label="Notificaciones, 2 nuevas">🔔<span class="badge-dot"></span></button>
+      <button class="avatar-btn" aria-label="Mi perfil"><span class="avatar-fallback">MJ</span></button>
+    </div>
+  </div>
+</header>
+
+<main class="page-content" style="padding-bottom: 140px;">
+  <div class="container flow-header">
+
+    <a href="elegir-fecha.html" class="back-btn" style="margin-bottom: var(--sp-4); display:inline-flex;">← Volver a fecha</a>
+
+    <!-- ============ STEPPER (signature element del flujo) ============ -->
+    <div class="stepper" aria-label="Progreso de la reserva">
+      <div class="stepper-step is-done">
+        <span class="dot">✓</span>
+        <span class="label">Médico</span>
+      </div>
+      <div class="stepper-step is-done">
+        <span class="dot">✓</span>
+        <span class="label">Fecha</span>
+      </div>
+      <div class="stepper-step is-current">
+        <span class="dot">3</span>
+        <span class="label">Horario</span>
+      </div>
+      <div class="stepper-step">
+        <span class="dot">4</span>
+        <span class="label">Confirmar</span>
+      </div>
+    </div>
+
+    <!-- Resumen de lo ya elegido -->
+    <div class="selected-summary">
+      <span class="avatar-sm" aria-hidden="true">👨‍⚕️</span>
+      <div class="text">
+        <span>Cardiología</span>
+        <strong>Dr. Eduardo Fernández</strong>
+      </div>
+    </div>
+
+    <h2 style="margin-bottom: var(--sp-1);">Elegí el horario</h2>
+    <p class="text-muted text-small" style="margin-bottom: var(--sp-2);">Jueves 25 de junio</p>
+
+    <!-- Selector rápido de fecha (alternativa compacta al calendario grande) -->
+    <div class="date-picker-mini" role="group" aria-label="Elegir día">
+      <div class="date-chip selected">
+        <span class="dow">JUE</span>
+        <span class="dom">25</span>
+        <span class="has-slots">6 horarios</span>
+      </div>
+      <div class="date-chip">
+        <span class="dow">VIE</span>
+        <span class="dom">26</span>
+        <span class="has-slots">3 horarios</span>
+      </div>
+      <div class="date-chip">
+        <span class="dow">SÁB</span>
+        <span class="dom">27</span>
+        <span class="has-slots" style="color: var(--color-text-faint);">Sin turnos</span>
+      </div>
+      <div class="date-chip">
+        <span class="dow">LUN</span>
+        <span class="dom">29</span>
+        <span class="has-slots">8 horarios</span>
+      </div>
+      <div class="date-chip">
+        <span class="dow">MAR</span>
+        <span class="dom">30</span>
+        <span class="has-slots">5 horarios</span>
+      </div>
+    </div>
+
+    <!-- ============ FRANJAS HORARIAS ============ -->
+    <div class="time-period-label">🌅 Mañana</div>
+    <div class="time-slots" role="group" aria-label="Horarios de la mañana">
+      <button class="time-slot">09:00</button>
+      <button class="time-slot occupied" disabled aria-label="09:30, ocupado">09:30</button>
+      <button class="time-slot selected" aria-pressed="true">10:00</button>
+      <button class="time-slot">10:30</button>
+      <button class="time-slot occupied" disabled aria-label="11:00, ocupado">11:00</button>
+      <button class="time-slot">11:30</button>
+    </div>
+
+    <div class="time-period-label">☀️ Tarde</div>
+    <div class="time-slots" role="group" aria-label="Horarios de la tarde">
+      <button class="time-slot">14:00</button>
+      <button class="time-slot">14:30</button>
+      <button class="time-slot occupied" disabled aria-label="15:00, ocupado">15:00</button>
+      <button class="time-slot">15:30</button>
+    </div>
+
+    <div class="legend">
+      <span class="legend-item"><span class="legend-swatch" style="background: var(--color-primary);"></span>Seleccionado</span>
+      <span class="legend-item"><span class="legend-swatch" style="background:#fff; border:1.5px solid var(--color-border);"></span>Disponible</span>
+      <span class="legend-item"><span class="legend-swatch" style="background: var(--color-disabled-bg);"></span>Ocupado</span>
+    </div>
+
+  </div>
+</main>
+
+<!-- ============ BARRA INFERIOR FIJA DE CONFIRMACIÓN ============ -->
+<div class="sticky-footer-bar">
+  <div class="row">
+    <div class="info">
+      Horario elegido
+      <strong>Jue 25/06 · 10:00 hs</strong>
+    </div>
+    <a href="confirmar-turno.html" class="btn btn-primary">Continuar →</a>
+  </div>
+</div>
+
+</body>
+</html>

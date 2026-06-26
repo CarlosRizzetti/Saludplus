@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SaludPlus — Ingresar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="design-system.css">
+<style>body { background: var(--color-support); }</style>
+</head>
+<body>
+
+<div class="auth-screen">
+  <div class="auth-screen-content">
+
+    <div class="auth-logo">
+      <span class="logo-mark" aria-hidden="true">+</span>
+      <span class="name">SaludPlus</span>
+    </div>
+
+    <div class="card auth-card">
+      <h1 style="margin-bottom: var(--sp-1);">Hola de nuevo</h1>
+      <p class="text-muted text-small" style="margin-bottom: var(--sp-6);">Ingresá para reservar o gestionar tus turnos.</p>
+
+      <form>
+        <div class="field">
+          <label for="login-email">Email</label>
+          <input class="input" type="email" id="login-email" placeholder="tu@email.com" autocomplete="email">
+        </div>
+
+        <div class="field">
+          <label for="login-pass">Contraseña</label>
+          <input class="input" type="password" id="login-pass" placeholder="••••••••" autocomplete="current-password">
+        </div>
+
+        <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom: var(--sp-6);">
+          <label class="checkbox-row">
+            <input type="checkbox" id="remember">
+            Recordarme
+          </label>
+          <a href="recuperar-password.html" class="text-small" style="color: var(--color-primary); font-weight:600;">¿Olvidaste tu contraseña?</a>
+        </div>
+
+        <a href="home.html" class="btn btn-primary btn-block">Ingresar</a>
+      </form>
+
+      <div class="auth-divider">o continuar con</div>
+
+      <div style="display:flex; gap: var(--sp-3);">
+        <button class="btn btn-outline btn-block" type="button">Google</button>
+        <button class="btn btn-outline btn-block" type="button">Mi Argentina</button>
+      </div>
+    </div>
+
+    <p class="auth-footer-link">¿No tenés cuenta? <a href="registro.html">Creá una gratis</a></p>
+  </div>
+</div>
+
+</body>
+</html>
