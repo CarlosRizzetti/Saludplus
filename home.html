@@ -43,6 +43,108 @@
     color: var(--color-primary-dark);
   }
 
+  /* ============ TURNO DE HOY — tarjeta de posición en fila virtual ============ */
+  .today-appointment-card {
+    display: block;
+    background: var(--color-success-bg);
+    border: 1.5px solid var(--color-secondary);
+    border-radius: var(--radius-lg);
+    padding: var(--sp-5);
+    margin-top: var(--sp-5);
+    transition: box-shadow var(--transition), transform var(--transition);
+  }
+  .today-appointment-card:hover {
+    box-shadow: var(--shadow-2);
+    transform: translateY(-1px);
+  }
+  .today-appointment-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--sp-3);
+  }
+  .today-appointment-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--color-secondary);
+    color: #fff;
+    font-size: var(--fs-tiny);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 4px var(--sp-3);
+    border-radius: var(--radius-full);
+  }
+  .today-appointment-badge .live-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: #fff;
+    animation: pulse-live 1.6s infinite ease-in-out;
+  }
+  .today-appointment-live-label {
+    font-size: var(--fs-tiny);
+    color: var(--color-secondary-dark);
+    font-weight: 600;
+  }
+  .today-appointment-text {
+    font-size: var(--fs-body);
+    color: var(--color-text);
+    margin-bottom: var(--sp-4);
+  }
+  .today-appointment-stats {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: var(--radius-md);
+    padding: var(--sp-4);
+    gap: var(--sp-4);
+  }
+  .today-appointment-stat {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2px;
+  }
+  .today-appointment-stat .stat-value {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-secondary-dark);
+  }
+  .today-appointment-stat .stat-value .stat-unit {
+    font-size: var(--fs-small);
+    font-weight: 600;
+    margin-left: 2px;
+  }
+  .today-appointment-stat .stat-label {
+    font-size: var(--fs-tiny);
+    color: var(--color-text-muted);
+  }
+  .today-appointment-divider {
+    width: 1px;
+    height: 36px;
+    background: var(--color-border);
+  }
+
+  /* Estado alternativo — se muestra cuando el paciente NO tiene turno hoy.
+     Referencia para desarrollo: alternar entre este bloque y .today-appointment-card
+     según el dato real del backend.
+  .today-appointment-empty {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-3);
+    background: var(--color-support);
+    border-radius: var(--radius-lg);
+    padding: var(--sp-4) var(--sp-5);
+    margin-top: var(--sp-5);
+    color: var(--color-text-muted);
+    font-size: var(--fs-small);
+  }
+  */
+
   .specialty-scroll {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -137,6 +239,32 @@
         <span aria-hidden="true">🔍</span>
         <input id="search-home" type="text" placeholder="Buscar especialidad, médico o estudio…">
       </div>
+
+      <!-- ============ TURNO DE HOY — posición en fila virtual, tiempo real ============ -->
+      <a href="detalle-turno.html" class="today-appointment-card">
+        <div class="today-appointment-head">
+          <span class="today-appointment-badge">
+            <span class="live-dot" aria-hidden="true"></span>Hoy
+          </span>
+          <span class="today-appointment-live-label">En vivo</span>
+        </div>
+
+        <p class="today-appointment-text">
+          Tenés un turno hoy con <strong>Dr. Eduardo Fernández</strong> (Cardiología)
+        </p>
+
+        <div class="today-appointment-stats">
+          <div class="today-appointment-stat">
+            <span class="stat-value">3</span>
+            <span class="stat-label">personas delante de vos</span>
+          </div>
+          <div class="today-appointment-divider"></div>
+          <div class="today-appointment-stat">
+            <span class="stat-value">10:35<span class="stat-unit">hs</span></span>
+            <span class="stat-label">hora estimada de atención</span>
+          </div>
+        </div>
+      </a>
 
       <div class="hero-cta-banner">
         <h2>Reservá tu turno en menos de 1 minuto</h2>

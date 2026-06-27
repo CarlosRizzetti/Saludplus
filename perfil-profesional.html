@@ -100,7 +100,7 @@
         </div>
 
         <!-- Currículum -->
-        <div class="card info-block" style="margin-bottom: 0;">
+        <div class="card info-block" style="margin-bottom: var(--sp-5);">
           <h3>🎓 Formación y experiencia</h3>
           <ul>
             <li>Médico especialista en Cardiología, UBA</li>
@@ -108,6 +108,53 @@
             <li>Ex jefe de guardia, Hospital Italiano de Buenos Aires</li>
             <li>Miembro de la Sociedad Argentina de Cardiología</li>
           </ul>
+        </div>
+
+        <!-- ============ FILA VIRTUAL DEL PROFESIONAL (tiempo real) ============ -->
+        <div class="virtual-queue" style="margin-bottom: 0;">
+          <div class="virtual-queue-head">
+            <h3>📊 Fila virtual — Dr. Fernández, hoy</h3>
+            <span class="virtual-queue-live"><span class="live-dot" aria-hidden="true"></span>En vivo</span>
+          </div>
+          <p class="virtual-queue-subtitle">Pacientes con turno y espera estimada para hoy.</p>
+
+          <div class="queue-timeline" role="group" aria-label="Carga de pacientes por horario, hoy">
+            <a href="elegir-horario.html" class="queue-slot carga-baja">
+              <span class="hora">09:00</span>
+              <span class="nivel-badge">1</span>
+              <span class="espera">5 min</span>
+            </a>
+            <a href="elegir-horario.html" class="queue-slot carga-baja">
+              <span class="hora">10:00</span>
+              <span class="nivel-badge">2</span>
+              <span class="espera">10 min</span>
+            </a>
+            <span class="queue-slot carga-alta" aria-disabled="true">
+              <span class="hora">11:00</span>
+              <span class="nivel-badge">5</span>
+              <span class="espera">35 min</span>
+            </span>
+            <a href="elegir-horario.html" class="queue-slot carga-media">
+              <span class="hora">14:00</span>
+              <span class="nivel-badge">3</span>
+              <span class="espera">15 min</span>
+            </a>
+            <a href="elegir-horario.html" class="queue-slot carga-baja">
+              <span class="hora">15:00</span>
+              <span class="nivel-badge">1</span>
+              <span class="espera">5 min</span>
+            </a>
+          </div>
+
+          <div class="queue-legend">
+            <span class="legend-item"><span class="legend-dot" style="background: var(--color-secondary);"></span>Baja carga</span>
+            <span class="legend-item"><span class="legend-dot" style="background: var(--color-warning);"></span>Carga media</span>
+            <span class="legend-item"><span class="legend-dot" style="background: var(--color-error);"></span>Alta carga</span>
+          </div>
+
+          <div class="queue-hint">
+            💡 Tocá una franja en verde o amarillo para reservar en ese horario
+          </div>
         </div>
       </div>
 

@@ -89,6 +89,85 @@
 
   <div class="container">
 
+    <!-- ============ FILA VIRTUAL POR ESPECIALIDAD (tiempo real) ============ -->
+    <section style="padding-top: var(--sp-6);">
+      <div class="virtual-queue">
+        <div class="virtual-queue-head">
+          <h3>📊 Fila virtual — Cardiología</h3>
+          <span class="virtual-queue-live"><span class="live-dot" aria-hidden="true"></span>En vivo</span>
+        </div>
+        <p class="virtual-queue-subtitle">Cantidad de pacientes con turno y espera estimada por franja horaria, hoy.</p>
+
+        <div class="queue-timeline" role="group" aria-label="Carga de pacientes por horario, hoy">
+          <a href="elegir-horario.html" class="queue-slot carga-baja">
+            <span class="hora">08:00</span>
+            <span class="nivel-badge">2</span>
+            <span class="espera">10 min</span>
+          </a>
+          <a href="elegir-horario.html" class="queue-slot carga-media">
+            <span class="hora">09:00</span>
+            <span class="nivel-badge">5</span>
+            <span class="espera">20 min</span>
+          </a>
+          <span class="queue-slot carga-alta" aria-disabled="true">
+            <span class="hora">10:00</span>
+            <span class="nivel-badge">8</span>
+            <span class="espera">35 min</span>
+          </span>
+          <span class="queue-slot carga-alta" aria-disabled="true">
+            <span class="hora">11:00</span>
+            <span class="nivel-badge">10</span>
+            <span class="espera">45 min</span>
+          </span>
+          <a href="elegir-horario.html" class="queue-slot carga-media">
+            <span class="hora">12:00</span>
+            <span class="nivel-badge">7</span>
+            <span class="espera">30 min</span>
+          </a>
+          <a href="elegir-horario.html" class="queue-slot carga-baja">
+            <span class="hora">13:00</span>
+            <span class="nivel-badge">4</span>
+            <span class="espera">15 min</span>
+          </a>
+          <a href="elegir-horario.html" class="queue-slot carga-baja">
+            <span class="hora">14:00</span>
+            <span class="nivel-badge">3</span>
+            <span class="espera">10 min</span>
+          </a>
+          <a href="elegir-horario.html" class="queue-slot carga-media">
+            <span class="hora">15:00</span>
+            <span class="nivel-badge">6</span>
+            <span class="espera">20 min</span>
+          </a>
+          <a href="elegir-horario.html" class="queue-slot carga-media">
+            <span class="hora">16:00</span>
+            <span class="nivel-badge">5</span>
+            <span class="espera">15 min</span>
+          </a>
+          <a href="elegir-horario.html" class="queue-slot carga-baja">
+            <span class="hora">17:00</span>
+            <span class="nivel-badge">2</span>
+            <span class="espera">5 min</span>
+          </a>
+          <a href="elegir-horario.html" class="queue-slot carga-baja">
+            <span class="hora">18:00</span>
+            <span class="nivel-badge">1</span>
+            <span class="espera">5 min</span>
+          </a>
+        </div>
+
+        <div class="queue-legend">
+          <span class="legend-item"><span class="legend-dot" style="background: var(--color-secondary);"></span>Baja carga</span>
+          <span class="legend-item"><span class="legend-dot" style="background: var(--color-warning);"></span>Carga media</span>
+          <span class="legend-item"><span class="legend-dot" style="background: var(--color-error);"></span>Alta carga</span>
+        </div>
+
+        <div class="queue-hint">
+          💡 Tocá una franja en verde o amarillo para reservar tu turno en ese horario
+        </div>
+      </div>
+    </section>
+
     <!-- ============ MÉDICOS DISPONIBLES (resultado del mapeado) ============ -->
     <section class="section" style="padding-top: var(--sp-5);">
       <h2 style="margin-bottom: var(--sp-1);">Médicos disponibles</h2>
